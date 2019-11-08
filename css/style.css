@@ -24,7 +24,7 @@
 .jumbotron{
     padding: 70px 30px 70px 30px;
     margin: 0px auto;
-    background: hsl(174, 100%, 20%)!important;
+    background: hsl(195, 100%, 20%)!important;
     color: aliceblue;
 }
 
@@ -38,4 +38,12 @@ address{
 
 .row-cop-leader{
     padding: 50px 0px 50px 0px;
+}
+body{
+    padding: 50px 0px 0px 0px;
+    z-index: 0;
+}
+
+.navbar-dark{
+    background-color:  hsl(195, 100%, 08%);
 }
