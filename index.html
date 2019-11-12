@@ -54,13 +54,13 @@
                         <div class="form-row">
                             <div class="form-group col-sm-4  align-self-center">
                                 <label for="email_id" class="sr-only">Email Address</label>
-                                <input type="email" class="form-control form-control-sm mr-1"  id="email_id"
-                                 placeholder="Email Address">
+                                <input type="email" class="form-control form-control-sm mr-1" id="email_id"
+                                    placeholder="Email Address">
                             </div>
                             <div class="form-group col-sm-4  align-self-center">
                                 <label for="password_id" class="sr-only">Password</label>
                                 <input type="password" class="form-control form-control-sm mr-1" id="password_id"
-                                placeholder="password">
+                                    placeholder="password">
                             </div>
                             <div class="col-sm-auto align-self-center">
                                 <div class="form-check">
@@ -70,12 +70,91 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <button class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal" type="button">Cancel</button>
+                            <button class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal"
+                                type="button">Cancel</button>
                             <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>
                         </div>
                     </form>
                 </div>
             </div>
+        </div>
+    </div>
+    <div id="reserverModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="content">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Reserve a Table</h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="form-group row " id="reserve">
+                            <div class="col-12 col-md-2 align-self-center">Number of guests</div>
+                            <div class="col-12 col-md-10">
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" class="form-check-input" id="family_members1"
+                                        name="family_members" value="1">
+                                    <label for="family_members1" class="form-check-label">1</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="family_members" id="family_members2" value="2"
+                                        class="form-check-input">
+                                    <label for="family_members2" class="form-check-label">2</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="family_members" id="family_members3" value="3"
+                                        class="form-check-input">
+                                    <label for="family_members3" class="form-check-label">3</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="family_members" id="family_members4"
+                                        class="form-check-input" value="4">
+                                    <label for="family_members4" class="form-check-label">4</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="family_members" id="family_members5"
+                                        class="form-check-input" value="5">
+                                    <label for="family_members5" class="form-check-label">5</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="family_members" id="family_members6"
+                                        class="form-check-input" value="6">
+                                    <label for="family_members6" class="form-check-label">6</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row align-items-center mt-2">
+                            <label for="#smokeid" class="col-12 col-md-2 "> Section</label>
+                            <div class="col-12 col-md">
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons" id="smokeid">
+                                    <label class="btn btn-success active" for="#non_smoking">
+                                        <input type="radio" name="section" id="non_smoking" checked> Non-Smoking
+                                    </label>
+                                    <label class="btn btn-danger" for="#smoking">
+                                        <input type="radio" name="section" id="smoking"> Smoking
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row mt-2">
+                            <label class="col-12 col-md-2 col-form-label" for="date">Date and Time</label>
+                            <div class="col-12 col-md-4">
+                                <input type="text" name="date" id="date" class="form-control" placeholder="Date">
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <input type="text" name="time" id="time" class="form-control" placeholder="Time">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="offset-md-2 col-md">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Reserve</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
         </div>
     </div>
     <header class="jumbotron">
@@ -93,10 +172,8 @@
                             <img src="img/logo.png" class="img-fluid" alt="">
                         </div>
                         <div class="col-12 col-sm-6 align-self-center">
-                            <a class="btn btn-block btn-warning " href="#reserve" data-toggle="tooltip" data-html="true" data-placement="bottom" 
-                                title="or call us at <br>
-                                <strong> +94 770783209 </strong>" 
-                            >Reserve Table</a>
+                            <a class="btn btn-block btn-warning " href="#reserve" data-toggle="modal"
+                                data-target="#reserverModal">Reserve Table</a>
                         </div>
                     </div>
                 </div>
@@ -112,11 +189,12 @@
                         <div class="carousel-item active">
                             <img class="d-block img-fluid" src="img/uthappizza.png" alt="uthappizza">
                             <div class="carousel-caption d-none d-md-block">
-                                <h2 >Uthappizza
+                                <h2>Uthappizza
                                     <span class="badge badge-danger">HOT</span>
                                     <span class="badge badge-pill badge-secondary"> $ 4.99</span>
                                 </h2>
-                                <p class="d-none d-sm-block">A unique combination of Indian Uthappam (pancake) and Italian
+                                <p class="d-none d-sm-block">A unique combination of Indian Uthappam (pancake) and
+                                    Italian
                                     pizza, topped with Cerignola olives,
                                     ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.</p>
                             </div>
@@ -130,7 +208,8 @@
                                 <p class="d-none d-sm-block">Featuring mouthwatering combinations with a choice of five
                                     different salads, six enticing
                                     appetizers,
-                                    six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for
+                                    six main entrees and five choicest desserts. Free flowing bubbly and soft drinks.
+                                    All for
                                     just
                                     $19.99 per person </p>
                             </div>
@@ -140,9 +219,11 @@
                             <div class="carousel-caption d-none d-md-block">
                                 <h2>Alberto Somayya</h2>
                                 <h4>Executive Chef</h4>
-                                <p class="d-none d-sm-block">Award winning three-star Michelin chef with wide International
+                                <p class="d-none d-sm-block">Award winning three-star Michelin chef with wide
+                                    International
                                     experience having worked closely with
-                                    whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion
+                                    whos-who in the culinary world, he specializes in creating mouthwatering
+                                    Indo-Italian fusion
                                     experiences. </p>
                             </div>
                         </div>
@@ -231,57 +312,7 @@
                         Reserve a Table
                     </h3>
                     <div class="card-body">
-                        <form action="">
-                            <div class="form-group row " id="reserve">
-                                <div class="col-12 col-md-2 align-self-center">Number of guests</div>
-                                <div class="col-12 col-md-10">
-                                    <div class="form-check form-check-inline">
-                                        <input type="radio" class="form-check-input" id="family_members1"
-                                            name="family_members" value="1">
-                                        <label for="family_members1" class="form-check-label">1</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input type="radio" name="family_members" id="family_members2" value="2"
-                                            class="form-check-input">
-                                        <label for="family_members2" class="form-check-label">2</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input type="radio" name="family_members" id="family_members3" value="3"
-                                            class="form-check-input">
-                                        <label for="family_members3" class="form-check-label">3</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input type="radio" name="family_members" id="family_members4"
-                                            class="form-check-input" value="4">
-                                        <label for="family_members4" class="form-check-label">4</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input type="radio" name="family_members" id="family_members5"
-                                            class="form-check-input" value="5">
-                                        <label for="family_members5" class="form-check-label">5</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input type="radio" name="family_members" id="family_members6"
-                                            class="form-check-input" value="6">
-                                        <label for="family_members6" class="form-check-label">6</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row ">
-                                <label class="col-12 col-md-2 col-form-label" for="date">Date and Time</label>
-                                <div class="col-12 col-md-4">
-                                    <input type="text" name="date" id="date" class="form-control" placeholder="Date">
-                                </div>
-                                <div class="col-12 col-md-4">
-                                    <input type="text" name="time" id="time" class="form-control" placeholder="Time">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="offset-md-2 col-md-10">
-                                    <button type="submit" class="btn btn-primary">Reserve</button>
-                                </div>
-                            </div>
-                        </form>
+
                     </div>
                 </div>
             </div>
@@ -338,11 +369,7 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('[data-toggle="tooltip"]').tooltip();
-        });
-    </script>
+
 </body>
 
 </html>
